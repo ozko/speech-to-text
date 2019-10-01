@@ -16,7 +16,7 @@ for f in tqdm(files):
     with sr.AudioFile(name) as source:
         audio = r.record(source)
     # Transcribe audio file
-    text = r.recognize_google_cloud(audio, credentials_json=GOOGLE_CLOUD_SPEECH_CREDENTIALS)
+    text = r.recognize_google_cloud(audio, language = 'bg', credentials_json=GOOGLE_CLOUD_SPEECH_CREDENTIALS)
     all_text.append(text)
 
 transcript = ""
